@@ -1,0 +1,9 @@
+blacklist:
+- subnet: 46.137.181.250 
+  description: amazon
+- subnet: 188.138.68.97
+  description: german
+- subnet: 46.137.168.210
+  description: amazon2
+- subnet: 89.181.132.205
+  description: novis

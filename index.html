@@ -1,0 +1,178 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="description" content="Web Services para codigos postais em Portugal">
+<meta name="keywords" content="cp4, cp7, coordenadas, latitude, longitude, geo, codigo postal, codigos postais">
+<style type="text/css">
+body {
+  font-family: sans-serif;
+  font-weight: bold;
+  text-align: center;
+}
+#header {
+  padding: 20px;
+  text-align: center;
+  font-size: 200%;
+}
+#header img {
+  vertical-align: middle;
+}
+#header a {
+  text-decoration: none;
+  color: black;
+}
+#header a:visited {
+  color: black;
+}
+#title {
+  font-size: 90%;
+  font-weight: normal;
+}
+#notes {
+  background: #BBCCFF;
+  font-size: 90%;
+  border: 1px;
+  border-color: #9999FF;
+  border-style: solid;
+  text-align: left;
+  width: 640px;
+  padding: 15px;
+  margin: 5px auto;
+}
+img {
+  text-decoration: none;
+  border: 0;
+}
+#content {
+  padding: 15px;
+  text-align: center;
+  width: 20em;
+  margin: auto;
+}
+input {
+  border: 1px;
+  border-style: solid;
+  border-color: black;
+}
+#footer {
+  font-size: 60%;
+  font-weight: normal;
+  padding: 20px;
+  margin: auto;
+}
+#footer hr {
+  width: 100px;
+}
+hr {
+  border-width: 0;
+  height: 1px;
+  color: black;
+  background-color: black;
+}
+p {
+  font-weight: normal;
+}
+</style>
+<style type="text/css">
+li p {
+  display: inline;
+}
+.screenshot {
+  border: 1px;
+  border-color: #9999FF;
+  border-style: solid;
+}
+h2 {
+  margin-top: 50px;
+</style>
+<title>Códigos Postais de Portugal</title>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-6932231-17']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</head><body>
+  <div>
+  <div id="header">
+    <!--<img src="static/cplp.jpg">-->
+    <a href="http://codigospostais.appspot.com/">Códigos Postais de Portugal</a>
+  </div>
+</div>
+  <h1>Web Service</h1>
+  <div style="margin: auto; width: 640px; text-align: left;">
+    <ul>
+      <li><a href="#cp4">cp4</a></li>
+      <li><a href="#cp7">cp7</a></li>
+      <li><a href="#coord2cp7">coord2cp7</a></li>
+      <li><a href="#cp72coord">cp72coord</a></li>
+    </ul>
+    <a name="cp4"></a>
+    <h2>/cp4?</h2>
+    <p>Devolve as coordenadas geográficas (latitude e longitude) para um determinado código postal de 4 dígitos.
+	   <p>Aceita pedidos GET.
+	   <p>Parâmetro: <b>codigo</b> código postal de 4 dígitos.
+	   <p>Parâmetro opcional: <b>callback</b> para a chamada de uma função em javascript (JSONP).
+	   <p>Resposta: JSON
+</p>
+    <a href="http://codigospostais.appspot.com/cp4?codigo=2675">
+      http://codigospostais.appspot.com/cp4?codigo=2675
+    </a>
+    <a name="cp7"></a>
+    <h2>/cp7?</h2>
+    <p>Devolve, quando existem, a Localidade, Artéria, Local/Zona e Troço para um determinado código postal de 7 dígitos.
+	   <p>Aceita pedidos GET.
+	   <p>Parâmetro: <b>codigo</b> código postal de 7 dígitos.
+	   <p>Parâmetro opcional: <b>callback</b> para a chamada de uma função em javascript (JSONP).
+	   <p>Resposta: JSON
+</p>
+    <a href="http://codigospostais.appspot.com/cp7?codigo=2620275">
+      http://codigospostais.appspot.com/cp7?codigo=2620275
+    </a>
+    <a name="coord2cp7"></a>
+    <h2>/coord2cp7?</h2>
+    <p>Devolve, quando existe, o código postal de 7 dígitos para um determinado par de coordenadas geográficas (latitude e longitude).
+	   <p>Aceita pedidos GET.
+	   <p>Parâmetro: <b>key</b> chave do cliente.
+	   <p>Parâmetro: <b>lat</b> latitude WGS84.
+	   <p>Parâmetro: <b>lon</b> longitude WGS84.	   
+	   <p>Parâmetro opcional: <b>callback</b> para a chamada de uma função em javascript (JSONP).
+	   <p>Resposta: JSON
+</p>
+    <a href="http://codigospostais.appspot.com/coord2cp7_username?">
+      http://codigospostais.appspot.com/coord2cp7_username?
+    </a>
+    <a name="cp72coord"></a>
+    <h2>/cp72coord?</h2>
+    <p>Devolve, quando existe, um par de coordenadas geográficas (latitude e longitude) para um determinado código postal de 7 dígitos.
+	   <p>Aceita pedidos GET.
+	   <p>Parâmetro: <b>key</b> chave do cliente.
+	   <p>Parâmetro: <b>codigo</b> código postal de 7 dígitos.	   
+	   <p>Parâmetro opcional: <b>callback</b> para a chamada de uma função em javascript (JSONP).
+	   <p>Resposta: JSON
+</p>
+    <a href="http://codigospostais.appspot.com/cp72coord_username?">
+      http://codigospostais.appspot.com/cp72coord_username?
+    </a>
+  </div>
+  <div id="footer">
+  <hr>
+  <div>
+    <a href="http://geodivagar.appspot.com/">Códigos Postais 2010-2015</a>
+    —
+    Disponibilizado para efeitos de demonstração. Para outros fins contactar:
+    —
+    apps.lusitanica@gmail.com
+  </div>
+</div>
+<!-- vim:ts=2:sw=2:et
+--></body></html>
